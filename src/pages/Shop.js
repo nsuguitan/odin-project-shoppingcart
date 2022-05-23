@@ -7,43 +7,43 @@ const products = [
         id: 1,
         name: "Double Chocolate",
         price: "$2.95",
-        imageURL: "./images/double-chocolate"
+        imageURL: "./images/double-chocolate.jpg"
     }
     ,{
         id: 2,
-        name: "Peanut Butter Chocolate Chip",
+        name: "Peanut Butter",
         price: "$2.95",
-        imageURL: "./images/pb-choco-chip"
+        imageURL: "./images/peanut-butter.jpg"
     }
     ,{
         id: 3,
-        name: "White Macadamia and Cranberries",
+        name: "White Chocolate",
         price: "$2.95",
-        imageURL: "./images/white-macadamia-cranberry"
+        imageURL: "./images/white-chocolate.jpg"
     }
     ,{
         id: 4,
         name: "Snickerdoodle",
         price: "$2.95",
-        imageURL: "./images/snickerdoodle"
+        imageURL: "./images/snickerdoodle.jpg"
     }
     ,{
         id: 5,
-        name: "Mint Chocolate Chip",
+        name: "Mint",
         price: "$2.95",
-        imageURL: "./images/mint-choco-chip"
+        imageURL: "./images/mint.jpg"
     }
     ,{
         id: 6,
         name: "M&M chocolate chip",
         price: "$2.95",
-        imageURL: "./images/mm-choco-chip"
+        imageURL: "./images/mm-choco-chip.jpg"
     }
     ,{
         id: 7,
         name: "Macaroon",
         price: "$2.95",
-        imageURL: "./images/macaroon"
+        imageURL: "./images/macaroon.jpg"
     }
 
 ];
