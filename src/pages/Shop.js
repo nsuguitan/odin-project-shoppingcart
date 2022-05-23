@@ -39,6 +39,12 @@ const products = [
         price: "$2.95",
         imageURL: "./images/mm-choco-chip"
     }
+    ,{
+        id: 7,
+        name: "Macaroon",
+        price: "$2.95",
+        imageURL: "./images/macaroon"
+    }
 
 ];
 
