@@ -11,27 +11,26 @@ import { Badge } from '@mui/material';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-//import AdbIcon from '@mui/icons-material/Adb';
+import PersistentDrawerRight from './ShoppingCartSidebar';
 import {Link} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../styles/Nav.css'
 
+
 const pages = ['Home', 'Shop'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  
+  const ref = React.useRef(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenCart = (event) => {
-    return true;
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
 
 
   return (
@@ -127,7 +126,7 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open cart">
-              <IconButton size= "large" onClick={handleOpenCart} sx={{ p: "3px" }}>
+              <IconButton size= "large" onClick={() => {ref.current.handleDrawerOpen()}} sx={{ p: "3px" }}>
                 <Badge badgeContent={4} color="success">
                   <ShoppingCartIcon />
                 </Badge>
@@ -135,6 +134,7 @@ const ResponsiveAppBar = () => {
             </Tooltip>
           </Box>
         </Toolbar>
+        < PersistentDrawerRight ref={ref} />
       </Container>
     </AppBar>
   );

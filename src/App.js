@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import { Drawer } from '@mui/material';
 import ResponsiveAppBar from './components/Nav';
 import myTheme from './styles/Theme';
 import { ThemeProvider } from '@mui/material/styles';
