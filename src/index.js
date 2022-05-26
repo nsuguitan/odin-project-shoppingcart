@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {StrictMode} from 'react';
+import Context from './contexts/Context';
 
 
 // 👇️ passed wrong ID to getElementById() method
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <Context>
+      <App />
+    </Context>
   </StrictMode>,
 );
 
