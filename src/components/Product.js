@@ -10,6 +10,7 @@ const Product = ({product}) => {
         state:{ cart },
         dispatch,
     } = CartState();
+    console.log(cart);
 
     return(
         <Grid item xs={3}>

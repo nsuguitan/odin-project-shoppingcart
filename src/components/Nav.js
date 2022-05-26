@@ -15,11 +15,19 @@ import PersistentDrawerRight from './ShoppingCartSidebar';
 import {Link} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../styles/Nav.css'
+import { CartState } from '../contexts/Context';
 
 
 const pages = ['Home', 'Shop'];
 
 const ResponsiveAppBar = () => {
+
+  const {
+    state: {cart},
+  } = CartState();
+
+  console.log("Cart Length", cart)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
   const ref = React.useRef(null);
@@ -127,7 +135,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open cart">
               <IconButton size= "large" onClick={() => {ref.current.handleDrawerOpen()}} sx={{ p: "3px" }}>
-                <Badge badgeContent={4} color="success">
+                <Badge badgeContent={(cart.length > 0) ? cart.length:"0"} color="success">
                   <ShoppingCartIcon />
                 </Badge>
               </IconButton>
