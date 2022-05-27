@@ -8,43 +8,43 @@ const Context = ( {children} ) => {
         {
             id: 1,
             name: "Double Chocolate",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/double-chocolate.jpg"
         }
         ,{
             id: 2,
             name: "Peanut Butter",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/peanut-butter.jpg"
         }
         ,{
             id: 3,
             name: "White Chocolate",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/white-chocolate.jpg"
         }
         ,{
             id: 4,
             name: "Snickerdoodle",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/snickerdoodle.jpg"
         }
         ,{
             id: 5,
             name: "Mint",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/mint.jpg"
         }
         ,{
             id: 6,
             name: "M&M chocolate chip",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/mm-choco-chip.jpg"
         }
         ,{
             id: 7,
             name: "Macaroon",
-            price: "$2.95",
+            price: 2.95,
             imageURL: "./images/macaroon.jpg"
         }
     

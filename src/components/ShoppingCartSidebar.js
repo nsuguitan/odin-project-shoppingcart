@@ -18,8 +18,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { CartState } from '../contexts/Context';
+import ShoppingCart from './ShoppingCart';
 
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -32,6 +34,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const PersistentDrawerRight = React.forwardRef((props, ref) => {
   const theme = useTheme();
+
+  const {
+    state: {cart},
+  } = CartState();
+
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerClose = () => {
@@ -68,31 +75,7 @@ const PersistentDrawerRight = React.forwardRef((props, ref) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        {cart.length>0 ? (<ShoppingCart />) :(<span style ={{padding: 10}}>Cart is Empty! Treat yo&#39;self</span>)}
       </Drawer>
     </Box>
   );

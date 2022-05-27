@@ -12,6 +12,13 @@ const Product = ({product}) => {
     } = CartState();
     console.log(cart);
 
+    const currencyFormat = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+      });
+
+      const formattedCurrency = currencyFormat.format(product.price);
+
     return(
         <Grid item xs={3}>
             <Paper>
@@ -22,7 +29,7 @@ const Product = ({product}) => {
                     <p className='card-text'>
                         <strong>{product.name}</strong>
                     </p>
-                    <p className='card-text'>{product.price}</p>
+                    <p className='card-text'>{formattedCurrency}</p>
                     {cart.some(p=>p.id===product.id) ? (
                         <Button onClick={() => {
                             dispatch({
