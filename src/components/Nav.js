@@ -14,7 +14,6 @@ import MenuItem from '@mui/material/MenuItem';
 import PersistentDrawerRight from './ShoppingCartSidebar';
 import {Link} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import '../styles/Nav.css'
 import { CartState } from '../contexts/Context';
 
 

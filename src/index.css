@@ -29,6 +29,11 @@ code {
 height: 400px;
 width: auto;
 }
+
+#cookie-logo{
+  transform: rotate(45deg) translate(3px,-3px);
+}
+
 .cookie-shop-image-container{
   height:160px;
   width:auto;
