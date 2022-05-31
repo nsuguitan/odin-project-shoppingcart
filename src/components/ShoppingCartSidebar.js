@@ -39,7 +39,7 @@ const PersistentDrawerRight = React.forwardRef((props, ref) => {
     state: {cart},
   } = CartState();
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerClose = () => {
     setOpen(false);

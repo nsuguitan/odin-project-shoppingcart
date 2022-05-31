@@ -24,7 +24,19 @@ const ShoppingCartItem = ({prod}) => {
                 <span>{prod.name}</span>
                 <span>{formattedCurrency}</span>
             </div>
-            <input className="productQty" type="number" min="1" defaultValue={prod.qty} ></input>
+            <input 
+                className="productQty" 
+                type="number" min="1" 
+                defaultValue={prod.qty} 
+                onChange={(e) =>
+                dispatch({
+                    type: "CHANGE_CART_QTY",
+                    payload: {
+                        id:prod.id,
+                        qty: e.target.value,
+                    }
+                },)}
+                 /> 
             < AiFillDelete 
                 className="trashIcon"
                 fontSize="20px"

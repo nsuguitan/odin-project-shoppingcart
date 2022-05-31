@@ -29,6 +29,14 @@ const ResponsiveAppBar = () => {
   console.log("Cart Length", cart)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const [itemCount, setItemCount] = React.useState();
+
+  React.useEffect(() => {
+      setItemCount(cart.reduce((acc,curr) => acc+ curr.qty *1, 0))
+  }, [cart]);
+  
+  let displayItemCount = itemCount;
   
   const ref = React.useRef(null);
 
@@ -50,7 +58,6 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -61,7 +68,8 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            Bytes Box
+            <Link style={{textDecoration: "none", color: "white"}} to="/Home">Bytes Box</Link>
+            
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -135,7 +143,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open cart">
               <IconButton size= "large" onClick={() => {ref.current.handleDrawerOpen()}} sx={{ p: "3px" }}>
-                <Badge badgeContent={(cart.length > 0) ? cart.length:"0"} color="success">
+                <Badge badgeContent={(cart.length > 0) ? displayItemCount:"0"} color="success">
                   <ShoppingCartIcon />
                 </Badge>
               </IconButton>
